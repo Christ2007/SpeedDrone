@@ -80,7 +80,7 @@ const Footer = () => {
             © 2026 SpeedDrone — Tutti i diritti riservati
           </p>
           <p className="font-rajdhani text-gray-600 text-sm flex items-center gap-1">
-            Realizzato con <FaHeart className="text-drone-red text-xs" /> dalla Classe 5B
+            Realizzato con <FaHeart className="text-drone-red text-xs" /> dalla Classe 5B a cura di: Christian Luongo
           </p>
         </div>
       </div>
