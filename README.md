@@ -42,9 +42,18 @@ Questo sito web funge da landing page per illustrare il progetto.
 4. Apri `http://localhost:5173` nel tuo browser.
 
 ## 🐳 Esecuzione tramite Docker (Produzione)
-Il progetto include una configurazione Docker pronta per l\'uso, che costruirà il sito e lo servirà tramite un web server leggero (Nginx).
+Il progetto include una configurazione Docker e Docker Compose pronta per l'uso, che costruirà il sito e lo servirà tramite un web server leggero (Nginx).
 
-1. Costruisci l\'immagine Docker:
+### Metodo 1: Docker Compose (Consigliato)
+Il modo più veloce per avviare il progetto è utilizzare Docker Compose dalla cartella principale:
+```bash
+docker-compose up -d --build
+```
+Il sito sarà accessibile all'indirizzo `http://localhost:8080`.
+Per fermare il container, usa: `docker-compose down`.
+
+### Metodo 2: Docker standard
+1. Costruisci l'immagine Docker:
    ```bash
    docker build -t speeddrone-web .
    ```
@@ -52,7 +61,7 @@ Il progetto include una configurazione Docker pronta per l\'uso, che costruirà 
    ```bash
    docker run -d -p 8080:80 --name speeddrone speeddrone-web
    ```
-3. Il sito sarà accessibile all\'indirizzo `http://localhost:8080`.
+3. Il sito sarà accessibile all'indirizzo `http://localhost:8080`.
 
 ## 🔋 I Nostri Valori
 Questo progetto va oltre il semplice lato tecnico. Abbiamo affrontato questa sfida guidati da tre valori chiave:
