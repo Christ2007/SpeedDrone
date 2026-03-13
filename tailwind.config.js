@@ -14,9 +14,9 @@ export default {
         'drone-gray-light': '#2A2A3E',
       },
       fontFamily: {
-        orbitron: ['"Audiowide"', 'sans-serif'],
-        rajdhani: ['"Audiowide"', 'sans-serif'],
-        exo: ['"Audiowide"', 'sans-serif'],
+        orbitron: ['Orbitron', 'sans-serif'],
+        rajdhani: ['Rajdhani', 'sans-serif'],
+        exo: ['Exo', 'sans-serif'],
       },
       animation: {
         'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
