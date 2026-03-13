@@ -14,7 +14,7 @@ Questo progetto unisce l\'elettronica, la programmazione e le tecnologie aero-sp
 Il sistema si divide in 3 fasi principali:
 1. **Fascio di Laser & Sensore:** Alcuni diodi laser puntati verso sensori fotoresistivi creano una "barriera" invisibile attraverso il gate.
 2. **Interruzione del Fascio:** Quando il drone attraversa il gate, interrompe il fascio laser per una frazione di secondo.
-3. **Rilevamento ESP32:** Il microcontrollore rileva il calo di tensione, scatta il tempo di passaggio e lo invia al sistema centrale.
+3. **Rilevamento ESP32:** Il microcontrollore rileva il calo di tensione, scatta il tempo e lo invia al sistema centrale al passaggio del drone all'ultimop gate il tempo viene inviato ad un server che aggiorna la classifica dei tempi in tempo reale.
 
 ## 🛠️ Tecnologia Utilizzata
 Il progetto fonde hardware e software per funzionare in perfetta sinergia:
