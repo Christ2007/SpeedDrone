@@ -29,8 +29,8 @@ const Footer = () => {
                 className="w-10 h-10 rounded-lg object-cover"
               />
               <span className="font-orbitron text-lg font-bold">
-                <span className="text-white">SPEED</span>
-                <span className="text-drone-red">DRONE</span>
+                <span className="text-white">Speed</span>
+                <span className="text-drone-red">Drone</span>
               </span>
             </div>
             <p className="font-rajdhani text-gray-500 text-sm leading-relaxed">
@@ -80,7 +80,7 @@ const Footer = () => {
             © 2026 SpeedDrone — Tutti i diritti riservati
           </p>
           <p className="font-rajdhani text-gray-600 text-sm flex items-center gap-1">
-            Realizzato con <FaHeart className="text-drone-red text-xs" /> dalla Classe 5B a cura di: Christian Luongo
+            Realizzato dalla Classe 5B a cura di: Christian Luongo
           </p>
         </div>
       </div>

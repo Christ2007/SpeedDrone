@@ -31,8 +31,8 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="font-orbitron text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black mb-6 tracking-tight"
         >
-          <span className="text-white text-glow-white">SPEED</span>
-          <span className="text-drone-red text-glow-red">DRONE</span>
+          <span className="text-white text-glow-white">Speed</span>
+          <span className="text-drone-red text-glow-red">Drone</span>
         </motion.h1>
 
         {/* Tagline */}

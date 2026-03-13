@@ -30,25 +30,22 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-drone-dark/50 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.3)] border-b border-white/5'
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? 'bg-drone-dark/50 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.3)] border-b border-white/5'
+        : 'bg-transparent'
+        }`}
     >
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#hero" className="flex items-center gap-3 group">
-          <img
-            src="/logo.png"
-            alt="SpeedDrone Logo"
-            className="w-12 h-12 rounded-lg object-cover transition-transform duration-300 group-hover:scale-105"
-          />
-          <span className="font-orbitron text-lg font-bold tracking-wider">
-            <span className="text-white">SPEED</span>
-            <span className="text-drone-red">DRONE</span>
-          </span>
-        </a>
+      <div className="w-full px-4 sm:px-8 xl:px-12 py-4 flex items-center justify-between">
+        {/* Logo Container */}
+        <div className="relative flex items-center h-12 w-24 md:w-32 lg:w-48">
+          <a href="#hero" className="flex items-center group absolute -top-4 -left-2 md:-top-6 md:-left-4 lg:-top-10 z-50">
+            <img
+              src="/logo.png"
+              alt="SpeedDrone Logo"
+              className="h-20 w-auto md:h-24 lg:h-32 object-contain transition-transform duration-300 group-hover:scale-105 origin-top-left"
+            />
+          </a>
+        </div>
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
