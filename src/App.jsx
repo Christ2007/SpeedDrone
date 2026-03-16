@@ -16,7 +16,7 @@ import Footer from './sections/Footer';
  */
 const App = () => {
   return (
-    <div className="bg-drone-dark text-white min-h-screen font-rajdhani">
+    <div className="min-h-screen bg-background-light dark:bg-background-dark text-slate-900 dark:text-white transition-colors duration-300">
       <Navbar />
       <Hero />
       <Progetto />

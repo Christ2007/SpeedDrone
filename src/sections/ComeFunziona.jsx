@@ -1,60 +1,68 @@
-import SectionWrapper from '../components/SectionWrapper';
-import SectionTitle from '../components/SectionTitle';
-import StepCard from '../components/StepCard';
-import { GiLaserSparks, GiDeliveryDrone } from 'react-icons/gi';
-import { FaMicrochip } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 /**
- * ComeFunziona — "Come Funziona" section showing the 3-step process.
+ * ComeFunziona — "Come Funziona" section showing the 3-step process redesign.
  */
-const steps = [
-  {
-    number: '1',
-    icon: <GiLaserSparks />,
-    title: 'Fascio Laser sul Gate',
-    description:
-      'Un diodo laser emette un fascio continuo attraverso il gate di gara, creando una barriera invisibile.',
-  },
-  {
-    number: '2',
-    icon: <GiDeliveryDrone />,
-    title: 'Il Drone Interrompe il Fascio',
-    description:
-      "Quando il drone attraversa il gate ad alta velocità, il suo corpo interrompe il fascio laser per un brevissimo istante.",
-  },
-  {
-    number: '3',
-    icon: <FaMicrochip />,
-    title: "L'ESP32 Rileva l'Evento",
-    description:
-      "Il microcontrollore ESP32 rileva l'interruzione del segnale e registra il passaggio con precisione al millisecondo.",
-  },
-];
-
 const ComeFunziona = () => {
   return (
-    <SectionWrapper id="come-funziona" dark>
-      <SectionTitle light>Come Funziona</SectionTitle>
+    <section className="py-24 bg-white/5 dark:bg-white/[0.02]" id="come-funziona">
+      <div className="max-w-7xl mx-auto px-6">
+        <h2 className="font-display text-3xl font-bold mb-16 text-center tracking-widest text-slate-900 dark:text-white">COME FUNZIONA</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Step 1 */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="glass p-8 rounded-2xl transition-transform hover:-translate-y-2 group"
+          >
+            <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:shadow-neon transition-all">
+              <span className="material-icons-outlined text-primary text-4xl">settings_input_antenna</span>
+            </div>
+            <h3 className="font-display text-xl font-bold mb-4 uppercase tracking-wider text-slate-900 dark:text-white">Raggio Laser</h3>
+            <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-body">
+              Un raggio laser continuo viene emesso attraverso il cancello di gara, creando una barriera invisibile ad altissima frequenza di campionamento.
+            </p>
+          </motion.div>
 
-      <div className="relative grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
-        {/* Connecting line (desktop only) */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="hidden md:block absolute top-12 left-[20%] right-[20%] h-0.5
-            bg-gradient-to-r from-drone-red via-drone-blue-electric to-drone-blue
-            origin-left"
-          style={{ zIndex: 0 }}
-        />
+          {/* Step 2 */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="glass p-8 rounded-2xl transition-transform hover:-translate-y-2 group"
+          >
+            <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:shadow-neon transition-all">
+              <span className="material-icons-outlined text-primary text-4xl">airplanemode_active</span>
+            </div>
+            <h3 className="font-display text-xl font-bold mb-4 uppercase tracking-wider text-slate-900 dark:text-white">Il Drone Lo Interrompe</h3>
+            <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-body">
+              Al passaggio del drone, il raggio laser viene interrotto. Questa variazione di intensità luminosa viene catturata istantaneamente da un ricevitore fotosensibile.
+            </p>
+          </motion.div>
 
-        {steps.map((step, i) => (
-          <StepCard key={step.number} {...step} index={i} />
-        ))}
+          {/* Step 3 */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="glass p-8 rounded-2xl transition-transform hover:-translate-y-2 group"
+          >
+            <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:shadow-neon transition-all">
+              <span className="material-icons-outlined text-primary text-4xl">memory</span>
+            </div>
+            <h3 className="font-display text-xl font-bold mb-4 uppercase tracking-wider text-slate-900 dark:text-white">L'ESP32 Lo Rileva</h3>
+            <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-body">
+              Il core ESP32 elabora il segnale e invia i dati di timing in tempo reale via Wi-Fi ad una dashboard centralizzata per la visualizzazione dei lap.
+            </p>
+          </motion.div>
+        </div>
       </div>
-    </SectionWrapper>
+    </section>
   );
 };
 

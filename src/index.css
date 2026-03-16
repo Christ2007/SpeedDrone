@@ -9,11 +9,9 @@
 /* Smooth scroll behavior & iOS overscroll fix */
 html {
   scroll-behavior: smooth;
-  background-color: #0A0A0F;
 }
 
 body {
-  background-color: #0A0A0F;
   overscroll-behavior: none;
 }
 
@@ -22,10 +20,10 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A0A0F;
+  background: #050505;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #E63946, #1D4ED8);
+  background: #FF0000;
   border-radius: 4px;
 }
 
@@ -33,78 +31,44 @@ body {
    Utility Classes
    ============================================ */
 
-/* Text glow effects */
-.text-glow-red {
-  text-shadow: 0 0 20px rgba(230, 57, 70, 0.6), 0 0 40px rgba(230, 57, 70, 0.3);
-}
-
-.text-glow-blue {
-  text-shadow: 0 0 20px rgba(29, 78, 216, 0.6), 0 0 40px rgba(29, 78, 216, 0.3);
-}
-
-.text-glow-white {
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
-}
-
-/* Box glow effects */
-.glow-red {
-  box-shadow: 0 0 20px rgba(230, 57, 70, 0.3), 0 0 40px rgba(230, 57, 70, 0.1);
-}
-
-.glow-blue {
-  box-shadow: 0 0 20px rgba(29, 78, 216, 0.3), 0 0 40px rgba(29, 78, 216, 0.1);
-}
-
-/* Gradient text */
-.gradient-text-red-blue {
-  background: linear-gradient(135deg, #E63946, #1D4ED8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  padding-bottom: 0.15em;
-  padding-top: 0.05em;
-  line-height: 1.2;
-}
-
-.gradient-text-blue-red {
-  background: linear-gradient(135deg, #1D4ED8, #E63946);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  padding-bottom: 0.15em;
-  padding-top: 0.05em;
-  line-height: 1.2;
-}
-
-/* Glass morphism card */
-.glass-card {
-  background: rgba(26, 26, 46, 0.6);
+.glass {
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
 }
 
-/* Animated border gradient */
-.border-glow {
+.dark .glass {
+  background: rgba(10, 10, 10, 0.6);
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  box-shadow: none;
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+}
+
+.bg-schematic {
+  background-image: radial-gradient(#FF0000 0.5px, transparent 0.5px);
+  background-size: 20px 20px;
+  opacity: 0.1;
+}
+
+.red-gradient-border {
   position: relative;
 }
-.border-glow::before {
-  content: '';
+
+.red-gradient-border::before {
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, #E63946, #1D4ED8, #E63946);
+  background: linear-gradient(to bottom right, #FF0000, transparent, #FF0000);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
-}
-
-/* Particle / grid overlay */
-.grid-overlay {
-  background-image: 
-    linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
+  pointer-events: none;
 }

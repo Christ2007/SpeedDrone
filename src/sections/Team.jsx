@@ -1,89 +1,37 @@
 import { motion } from 'framer-motion';
-import SectionWrapper from '../components/SectionWrapper';
-import SectionTitle from '../components/SectionTitle';
-import { FaUsers, FaHeart, FaHandsHelping } from 'react-icons/fa';
 
 /**
- * Team — "Sviluppato dalla Classe 5B" section.
- * Inspiring, proud, and collaborative tone.
+ * Team — "Sviluppato dalla Classe 5B" section redesigned.
  */
 const Team = () => {
   return (
-    <SectionWrapper id="team" dark>
-      <SectionTitle light>Sviluppato dalla Classe 5B</SectionTitle>
-
-      <div className="max-w-4xl mx-auto text-center">
-        {/* Main motivational text */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="font-rajdhani text-xl md:text-2xl text-gray-300 leading-relaxed mb-12"
-        >
-          Questo progetto è il risultato del lavoro collaborativo degli studenti della{' '}
-          <span className="text-drone-red font-semibold">classe 5B</span>. Un team di ragazzi
-          appassionati di tecnologia che ha trasformato un'idea in un prototipo funzionante,
-          dimostrando che <span className="text-drone-blue-electric font-semibold">
-            l'innovazione nasce anche tra i banchi di scuola</span>.
-        </motion.p>
-
-        {/* Value cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {[
-            {
-              icon: <FaUsers />,
-              title: 'Lavoro di Squadra',
-              text: 'Ogni membro ha contribuito con le proprie competenze uniche al successo del progetto.',
-            },
-            {
-              icon: <FaHeart />,
-              title: 'Passione',
-              text: 'La passione per la tecnologia e gli aerei ha guidato ogni fase del lavoro.',
-            },
-            {
-              icon: <FaHandsHelping />,
-              title: 'Collaborazione',
-              text: 'Confronto, condivisione e supporto reciproco sono stati i pilastri del nostro team.',
-            },
-          ].map((item, i) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="glass-card rounded-xl p-6 group
-                hover:shadow-[0_0_20px_rgba(230,57,70,0.15)] transition-all duration-300"
-            >
-              <div className="text-3xl text-drone-red mb-4 flex justify-center
-                group-hover:scale-110 transition-transform duration-300">
-                {item.icon}
-              </div>
-              <h3 className="font-orbitron text-base font-semibold text-white mb-2">
-                {item.title}
-              </h3>
-              <p className="font-rajdhani text-gray-400 text-sm leading-relaxed">
-                {item.text}
-              </p>
-            </motion.div>
-          ))}
+    <section className="py-24 bg-background-dark relative" id="team">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        <div className="mb-16 text-center">
+          <h2 className="font-display text-3xl font-bold mb-4 tracking-widest text-slate-900 dark:text-white uppercase">IL NOSTRO TEAM</h2>
+          <div className="w-24 h-1 bg-primary mx-auto"></div>
         </div>
 
-        {/* Quote */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="inline-block glass-card rounded-2xl px-8 py-5 border border-white/5"
+          transition={{ duration: 0.6 }}
+          className="glass p-12 rounded-2xl text-center max-w-4xl mx-auto border-t-4 border-primary"
         >
-          <p className="font-exo text-base md:text-lg text-gray-400 italic">
-            "Dalla teoria alla pratica — dalla classe alla pista."
+          <span className="material-icons-outlined text-primary text-6xl mb-6">school</span>
+          <h3 className="font-display text-2xl font-bold mb-6 text-slate-900 dark:text-white uppercase">Progetto Classe 5B</h3>
+          <p className="font-body text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+            Questo progetto è il risultato del lavoro collaborativo degli studenti della classe 5B. Siamo un gruppo di studenti appassionati di elettronica, informatica e automazione. SpeedDrone rappresenta la sintesi del nostro percorso di studi, unendo competenze teoriche alla risoluzione pratica di problemi complessi.
+          </p>
+          <p className="text-primary font-bold italic font-display tracking-wide">
+            L'innovazione nasce anche tra i banchi di scuola.
           </p>
         </motion.div>
+        
       </div>
-    </SectionWrapper>
+    </section>
   );
 };
 

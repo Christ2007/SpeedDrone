@@ -1,76 +1,49 @@
 import { motion } from 'framer-motion';
-import SectionWrapper from '../components/SectionWrapper';
-import SectionTitle from '../components/SectionTitle';
-import { FaRocket, FaGraduationCap } from 'react-icons/fa';
-import { GiDeliveryDrone } from 'react-icons/gi';
 
 /**
- * Progetto — "Il Progetto" section explaining the project and motivation.
+ * Progetto — "Il Progetto" section introducing the engineering challenge.
  */
-const features = [
-  {
-    icon: <FaRocket />,
-    title: 'Innovazione',
-    text: 'Un sistema originale per il rilevamento automatico del passaggio dei droni attraverso i gate di gara, sfruttando tecnologie embedded e sensori laser.',
-  },
-  {
-    icon: <FaGraduationCap />,
-    title: 'Educazione',
-    text: "Un progetto che unisce teoria e pratica: dall'elettronica alla programmazione, dalla progettazione alla realizzazione di un prototipo funzionante.",
-  },
-  {
-    icon: <GiDeliveryDrone />,
-    title: 'Drone Racing',
-    text: 'Le gare FPV sono uno sport in rapida crescita. Il nostro sistema offre una soluzione accessibile per il cronometraggio e il rilevamento dei passaggi.',
-  },
-];
-
 const Progetto = () => {
   return (
-    <SectionWrapper id="progetto">
-      <SectionTitle>Il Progetto</SectionTitle>
+    <section className="py-24 relative overflow-hidden" id="progetto">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        
+        {/* Schematic Graphic Left Side */}
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative aspect-video glass rounded-2xl flex items-center justify-center overflow-hidden red-gradient-border"
+        >
+          <div className="absolute inset-0 bg-schematic"></div>
+          <div className="relative w-3/4 h-3/4 border-4 border-white/20 rounded-t-full flex items-end justify-center">
+            <div className="absolute top-1/2 left-0 w-full h-0.5 bg-primary shadow-neon opacity-80 animate-pulse"></div>
+            <span className="material-icons-outlined text-primary text-8xl opacity-20 absolute top-1/4">sensors</span>
+          </div>
+        </motion.div>
 
-      {/* Intro text */}
-      <motion.p
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="font-rajdhani text-lg md:text-xl text-gray-300 text-center max-w-3xl mx-auto mb-16 leading-relaxed"
-      >
-        SpeedDrone è un sistema di rilevamento gate per gare di droni FPV, progettato e costruito
-        dalla classe 5B come progetto di ingegneria scolastica. Il sistema utilizza laser, sensori
-        e un microcontrollore ESP32 per rilevare con precisione il passaggio dei droni attraverso
-        i gate di gara.
-      </motion.p>
-
-      {/* Feature cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {features.map((feat, i) => (
-          <motion.div
-            key={feat.title}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.15 }}
-            whileHover={{ y: -6 }}
-            className="glass-card rounded-xl p-8 text-center group
-              hover:shadow-[0_0_25px_rgba(29,78,216,0.2)] transition-all duration-300"
-          >
-            <div className="text-4xl text-drone-blue-electric mb-5 flex justify-center
-              group-hover:scale-110 transition-transform duration-300">
-              {feat.icon}
-            </div>
-            <h3 className="font-orbitron text-xl font-semibold text-white mb-3">
-              {feat.title}
-            </h3>
-            <p className="font-rajdhani text-gray-400 leading-relaxed">
-              {feat.text}
-            </p>
-          </motion.div>
-        ))}
+        {/* Text Details Right Side */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <h2 className="font-display text-3xl font-bold mb-6 flex items-center gap-3">
+            <span className="w-12 h-0.5 bg-primary"></span>
+            IL PROGETTO
+          </h2>
+          <p className="text-lg text-slate-400 leading-relaxed mb-6 font-body">
+            SpeedDrone nasce come sfida ingegneristica per rivoluzionare il monitoraggio e la telemetria nelle competizioni FPV (First Person View). Il nostro obiettivo è creare un sistema di rilevamento ultra-veloce ed estremamente preciso per cancelli di gara.
+          </p>
+          <p className="text-lg text-slate-400 leading-relaxed font-body">
+            Utilizzando microcontrollori avanzati e sensori laser a bassa latenza, abbiamo sviluppato una soluzione scalabile che garantisce tempi di risposta in millisecondi, portando l'automazione professionale nel mondo del racing amatoriale e scolastico.
+          </p>
+        </motion.div>
+        
       </div>
-    </SectionWrapper>
+    </section>
   );
 };
 

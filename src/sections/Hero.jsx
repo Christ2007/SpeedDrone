@@ -1,72 +1,64 @@
 import { motion } from 'framer-motion';
-import ParticleBackground from '../components/ParticleBackground';
-import GlowButton from '../components/GlowButton';
 
-/**
- * Hero — Full-viewport landing section.
- * Features animated logo, title, tagline, CTA, and particle background.
- */
 const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-drone-dark"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
-      {/* Particle background */}
-      <ParticleBackground />
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background-dark/50 to-background-dark"></div>
+        <img 
+          alt="Drone Racing Track Background" 
+          className="w-full h-full object-cover grayscale opacity-30 scale-110 blur-sm" 
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuATUAE2-b6ogjvalB4W8FYLxiLQnoyTk2aLmDaTT5ZDV7dnVIGZ_JcfarSQR6hGfcPmS0O72-Qw4El4bXDuz9GZJoBQO_L5wOKg9p8pszO9NwK9n8A8VTdWXFKrDneo6OhanJYclIWMMNECX8FP08UNQ-KcQEST9G-djN4BykpYwhjV5_Dya3YFcWf_yGAEbc1VcCWjnpU_s3oHs4inZ_-12H4uyj7vbZP4JY5cmi12UnTfi-M_2-qFeT2MvfWoNA3DbSjTj3h-a_xD"
+        />
+      </div>
 
-      {/* Radial gradient overlays */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(230,57,70,0.08)_0%,transparent_70%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(29,78,216,0.08)_0%,transparent_70%)]" />
-
-      {/* Grid overlay */}
-      <div className="absolute inset-0 grid-overlay opacity-40" />
-
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 w-full max-w-6xl mx-auto">
-        {/* Title */}
-        <motion.h1
+      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-4">
+        <motion.img 
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7 }}
+          alt="SpeedDrone Logo Large" 
+          className="mx-auto mb-8 w-56 sm:w-72 md:w-96 drop-shadow-[0_0_15px_rgba(255,0,0,0.5)]" 
+          src="/logo.png"
+        />
+        
+        <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="font-orbitron text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black mb-6 tracking-tight"
+          className="font-display text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tighter uppercase"
         >
-          <span className="text-white text-glow-white">Speed</span>
-          <span className="text-drone-red text-glow-red">Drone</span>
+          <span className="text-white">Tecnologia intelligente per le gare </span>
+          <span className="text-primary italic">FPV</span>
+          <span className="text-white"> a basso costo</span>
         </motion.h1>
 
-        {/* Tagline */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.5 }}
-          className="font-rajdhani text-lg md:text-2xl text-gray-300 mb-4 max-w-2xl mx-auto leading-relaxed"
-        >
-          Tecnologia intelligente per le gare FPV a basso costo
-        </motion.p>
-
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.65 }}
-          className="font-exo text-sm md:text-base text-gray-500 mb-10 uppercase tracking-widest"
+          className="font-body text-sm md:text-base text-slate-400 mb-10 uppercase tracking-[0.2em]"
         >
           Sistema di rilevamento gate • Progetto Classe 5B
         </motion.p>
-
-        {/* CTA Button */}
-        <motion.div
+        
+        <motion.a 
+          href="#progetto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.8 }}
+          transition={{ duration: 0.7, delay: 0.7 }}
+          className="font-display group relative inline-flex items-center justify-center px-10 py-4 overflow-hidden font-bold rounded-full transition-all bg-transparent border-2 border-primary text-white hover:bg-primary shadow-neon"
         >
-          <GlowButton href="#progetto">Scopri il progetto</GlowButton>
-        </motion.div>
+          <span className="relative uppercase tracking-[0.2em]">Scopri il progetto</span>
+        </motion.a>
       </div>
 
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-drone-gray to-transparent" />
+      {/* Decorative Beams */}
+      <div className="absolute top-1/4 -left-20 w-96 h-1 bg-primary/20 blur-xl -rotate-45 animate-pulse"></div>
+      <div className="absolute bottom-1/4 -right-20 w-96 h-1 bg-primary/20 blur-xl -rotate-45 animate-pulse" style={{ animationDelay: '0.7s' }}></div>
 
       {/* Scroll indicator */}
       <motion.div
@@ -78,9 +70,9 @@ const Hero = () => {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-gray-600 flex items-start justify-center p-1.5"
+          className="w-6 h-10 rounded-full border-2 border-white/20 flex items-start justify-center p-1.5"
         >
-          <div className="w-1.5 h-3 rounded-full bg-drone-red" />
+          <div className="w-1.5 h-3 rounded-full bg-primary shadow-neon" />
         </motion.div>
       </motion.div>
     </section>
