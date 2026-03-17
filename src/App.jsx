@@ -16,7 +16,13 @@ import Footer from './sections/Footer';
  */
 const App = () => {
   return (
-    <div className="min-h-screen bg-background-light dark:bg-background-dark text-slate-900 dark:text-white transition-colors duration-300">
+    <div 
+      className="min-h-screen bg-background-light dark:bg-background-dark text-slate-900 dark:text-white transition-colors duration-300"
+      onContextMenu={(e) => e.preventDefault()}
+      onCopy={(e) => e.preventDefault()}
+      onCut={(e) => e.preventDefault()}
+      onPaste={(e) => e.preventDefault()}
+    >
       <Navbar />
       <Hero />
       <Progetto />

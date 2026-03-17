@@ -15,6 +15,10 @@ html {
 body {
   overscroll-behavior: none;
   background-color: #0A0A0F;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   /* Extend content into iOS safe areas */
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
