@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { DroneIcon } from '../components/DroneIcon';
 
 /**
  * Tecnologia — "Tecnologia Utilizzata" section showcasing tech stack redesign.
@@ -40,7 +41,7 @@ const Tecnologia = () => {
   return (
     <section className="py-24 relative overflow-hidden" id="tecnologia">
       <div className="max-w-7xl mx-auto px-6">
-        
+
         <div className="mb-16 text-center">
           <h2 className="font-display text-3xl font-bold mb-4 tracking-widest text-slate-900 dark:text-white">ECOSISTEMA TECNOLOGICO</h2>
           <div className="w-24 h-1 bg-primary mx-auto"></div>
@@ -57,7 +58,11 @@ const Tecnologia = () => {
               className="red-gradient-border p-8 rounded-xl glass hover:-translate-y-2 transition-transform duration-300"
             >
               <div className="flex items-center gap-4 mb-4">
-                <span className="material-icons-outlined text-primary">{tech.icon}</span>
+                {tech.icon === 'flight' ? (
+                  <DroneIcon className="text-primary w-6 h-6" />
+                ) : (
+                  <span className="material-icons-outlined text-primary">{tech.icon}</span>
+                )}
                 <h4 className="font-display font-bold text-slate-900 dark:text-white">{tech.title}</h4>
               </div>
               <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">

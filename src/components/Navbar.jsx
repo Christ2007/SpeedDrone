@@ -43,12 +43,6 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
-          <a
-            href="#progetto"
-            className="bg-primary px-5 py-2 rounded text-white shadow-neon hover:shadow-neon-strong transition-all font-bold"
-          >
-            DISCOVER
-          </a>
         </div>
 
         {/* Mobile hamburger */}
@@ -91,13 +85,6 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <a
-                href="#progetto"
-                onClick={() => setMobileOpen(false)}
-                className="bg-primary px-5 py-2 inline-block text-center rounded text-white shadow-neon hover:shadow-neon-strong transition-all font-bold font-display tracking-widest mt-2"
-              >
-                DISCOVER
-              </a>
             </div>
           </motion.div>
         )}

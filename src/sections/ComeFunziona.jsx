@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { DroneIcon } from '../components/DroneIcon';
 
 /**
  * ComeFunziona — "Come Funziona" section showing the 3-step process redesign.
@@ -36,7 +37,7 @@ const ComeFunziona = () => {
             className="glass p-8 rounded-2xl transition-transform hover:-translate-y-2 group"
           >
             <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:shadow-neon transition-all">
-              <span className="material-icons-outlined text-primary text-4xl">airplanemode_active</span>
+              <DroneIcon className="text-primary w-9 h-9" />
             </div>
             <h3 className="font-display text-xl font-bold mb-4 uppercase tracking-wider text-slate-900 dark:text-white">Il Drone Lo Interrompe</h3>
             <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed font-body">
