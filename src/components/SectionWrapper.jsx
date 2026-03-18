@@ -14,9 +14,8 @@ const SectionWrapper = ({ children, id, className = '', dark = false }) => {
     <section
       id={id}
       ref={ref}
-      className={`relative py-20 md:py-28 px-6 overflow-hidden ${
-        dark ? 'bg-drone-dark' : 'bg-drone-gray'
-      } ${className}`}
+      className={`relative py-20 md:py-28 px-6 overflow-hidden ${dark ? 'bg-drone-dark' : 'bg-drone-gray'
+        } ${className}`}
     >
       <motion.div
         initial={{ opacity: 0, y: 60 }}
