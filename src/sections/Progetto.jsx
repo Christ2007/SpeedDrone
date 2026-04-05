@@ -20,10 +20,10 @@ const Progetto = () => {
             IL PROGETTO
           </h2>
           <p className="text-lg text-slate-400 leading-relaxed mb-6 font-body">
-            SpeedDrone nasce come sfida ingegneristica per il monitoraggio e la telemetria nelle competizioni FPV (First Person View). Il nostro obiettivo è creare un sistema di rilevamento ultra-veloce ed estremamente preciso per cancelli di gara.
+            SpeedDrone nasce come sfida ingegneristica per il monitoraggio e la telemetria nelle competizioni FPV (First Person View). Il nostro obiettivo è creare un sistema di rilevamento ultra-veloce ed estremamente preciso per cancelli di gara, senza fili, senza configurazioni e senza infrastrutture.
           </p>
           <p className="text-lg text-slate-400 leading-relaxed font-body">
-            Utilizzando microcontrollori avanzati e sensori laser a bassa latenza, abbiamo creato una soluzione scalabile che garantisce tempi di risposta in millisecondi, portando l'automazione professionale nel mondo del racing amatoriale e scolastico.
+            Ogni drone trasmette continuamente il proprio nome via WiFi come un beacon radio. I gate ascoltano passivamente questi segnali in modalità promiscua e calcolano la distanza tramite l'intensità del segnale (RSSI): quando il picco di potenza sale e poi scende, il passaggio è confermato. Nessun cavo, nessun laser, nessuna sincronizzazione manuale.
           </p>
         </motion.div>
 

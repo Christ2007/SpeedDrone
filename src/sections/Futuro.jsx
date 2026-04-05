@@ -6,19 +6,19 @@ import { motion } from 'framer-motion';
 const visions = [
   {
     title: 'Integrazione in Gare Reali',
-    text: 'Portare il sistema SpeedDrone in competizioni locali e regionali di drone racing per testarlo sul campo.',
+    text: 'Portare il sistema SpeedDrone in competizioni locali e regionali di drone racing per testarlo in condizioni reali con più piloti contemporaneamente.',
   },
   {
-    title: 'Sistema di Cronometraggio',
-    text: 'Sviluppare un sistema completo di lap timing con classifica in tempo reale e storico dei tempi.',
+    title: 'Dashboard Web Live',
+    text: 'Sviluppare una dashboard raggiungibile via browser in rete locale: classifiche in tempo reale, storico dei giri e confronto tra piloti.',
   },
   {
-    title: 'Uso in Competizioni',
-    text: 'Rendere SpeedDrone una soluzione certificabile per gare ufficiali di drone racing.',
+    title: 'Uso in Competizioni Ufficiali',
+    text: 'Rendere SpeedDrone una soluzione certificabile per gare ufficiali di drone racing, con supporto a più gate e percorsi complessi.',
   },
   {
-    title: 'Telemetria Wireless',
-    text: 'Espandere il sistema con trasmissione dati wireless, dashboard live e analisi delle prestazioni.',
+    title: 'Release Open Source',
+    text: 'Pubblicare firmware, schemi e software su GitHub per permettere a chiunque di replicare o migliorare il sistema.',
   },
 ];
 

@@ -9,25 +9,25 @@ const technologies = [
     icon: 'developer_board',
     title: 'Microcontrollore ESP32',
     description:
-      'Microcontrollore dual-core ad alte prestazioni con Wi-Fi e Bluetooth integrati. Il cervello del nostro sistema.',
+      'Microcontrollore dual-core ad alte prestazioni con Wi-Fi integrato. Presente sia sul drone (trasmettitore beacon) che al gate (ricevitore) e al coordinatore centrale.',
   },
   {
-    icon: 'lightbulb',
-    title: 'Diodi Laser',
+    icon: 'wifi_tethering',
+    title: 'WiFi Beacon & RSSI',
     description:
-      'Emettitori laser di precisione per creare barriere di rilevamento affidabili e istantanee attraverso i gate.',
+      'Ogni drone irradia il proprio nome come beacon WiFi 10 volte al secondo. I gate misurano l\'intensità del segnale (RSSI) per rilevare il passaggio tramite il picco di potenza.',
+  },
+  {
+    icon: 'cell_tower',
+    title: 'ESP-NOW',
+    description:
+      'Protocollo di comunicazione peer-to-peer di Espressif, senza router. I gate inviano gli eventi di passaggio al coordinatore in millisecondi, senza infrastruttura WiFi.',
   },
   {
     icon: 'integration_instructions',
     title: 'Embedded Systems',
     description:
-      'Firmware ottimizzato scritto in C/C++ per garantire tempi di risposta al millisecondo e massima affidabilità.',
-  },
-  {
-    icon: 'build',
-    title: 'Prototipazione',
-    description:
-      'Progettazione e assemblaggio di circuiti con componenti reali, dalla breadboard al prototipo funzionante.',
+      'Firmware ottimizzato scritto in C/C++ per garantire tempi di risposta al millisecondo e massima affidabilità. I nomi dei piloti vengono salvati nella flash NVS.',
   },
   {
     icon: 'flight',
